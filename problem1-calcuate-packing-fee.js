@@ -7,6 +7,10 @@ Date.prototype.isValid = function () {
 const packingPriceDaily = 5;
 const timeInOneDay = 86400000;
 const calculateParkingFee = (timeIn) => {
+    if (!(timeIn instanceof Date)) {
+        throw new Error('Invalid Date');
+    }
+
     if (!timeIn.isValid()) {
         throw new Error('Invalid Date');
     }
